@@ -7,7 +7,7 @@ import { connectDB } from "./config/db.js"
 import cors from "cors";
 dotenv.config()
 const app=express();
-const port=process.env.PORT || 3001
+const port=process.env.PORT || 3000
 
 app.use(cors(
     {
@@ -25,6 +25,6 @@ app.use(express.json())
 app.use("/books", bookRoutes)
 connectDB().then( ()=>{
     app.listen(port, () =>{
-        console.log(`http://localhost:${port}/books`)
+        // console.log(`http://localhost:${port}/books`)
  })
 })
